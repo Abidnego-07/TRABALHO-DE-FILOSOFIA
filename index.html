@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminário – Paul Feyerabend</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff8e7;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #8B4513, #A0522D, #CD853F, #F4A460);
+            background-size: 400% 400%;
+            animation: fundo 15s ease infinite;
+        }
+
+        @keyframes fundo {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: all 1s ease;
+        }
+
+        /* CAPA */
+        .capa {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .capa h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8em;
+            color: #ffdf91;
+        }
+
+        .capa h2 {
+            font-size: 1.3em;
+            font-weight: 400;
+            margin: 10px 0 30px;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #ffdf91, #f5b841);
+            color: #1a120b;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #f5d57d;
+        }
+
+        /* CONTEÚDO */
+        .conteudo {
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .texto {
+            flex: 1 1 50%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .carrossel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            animation: fade 1s ease;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide.ativo {
+            display: block;
+        }
+
+        .slide h3 {
+            color: #ffe4a0;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .slide p {
+            color: #fff8e7;
+            font-size: 1em;
+            line-height: 1.6em;
+        }
+
+        .imagem {
+            flex: 1 1 40%;
+            text-align: center;
+        }
+
+        .imagem img {
+            width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease;
+        }
+
+        .imagem img:hover {
+            transform: scale(1.05);
+        }
+
+        .controles {
+            margin-top: 20px;
+        }
+
+        .controles button {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff8e7;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 0 8px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .controles button:hover {
+            background: #ffdf91;
+            color: #1a120b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #fff0c7;
+            font-size: 0.95em;
+        }
+
+        .link-trabalho {
+            margin-top: 30px;
+        }
+
+        .link-trabalho a {
+            background: linear-gradient(90deg, #ffdf91, #f5b841);
+            color: #1a120b;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: 0.4s;
+        }
+
+        .link-trabalho a:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #ffdf91;
+        }
+
+        @media (max-width: 768px) {
+            .conteudo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .imagem img {
+                width: 80%;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CAPA -->
+    <section class="capa" id="capa">
+        <h1>Paul Feyerabend</h1>
+        <h2>O anarquista da filosofia da ciência</h2>
+        <button class="btn" id="entrarBtn">Entrar no Trabalho</button>
+    </section>
+
+    <!-- CONTEÚDO -->
+    <section class="conteudo" id="conteudo">
+        <div class="texto">
+            <div class="carrossel">
+                <div class="slide ativo">
+                    <h3>1. Introdução</h3>
+                    <p>Paul Feyerabend foi um dos filósofos mais ousados do século XX. Seu pensamento questionou a
+                        rigidez da ciência tradicional e defendeu a liberdade criativa dos cientistas.</p>
+                </div>
+                <div class="slide">
+                    <h3>2. Principais Ideias</h3>
+                    <p>Ele acreditava que não existe um método único para fazer ciência. Cada avanço nasce do caos, da
+                        mistura e da quebra de regras.</p>
+                </div>
+                <div class="slide">
+                    <h3>3. Crítica à Ciência Moderna</h3>
+                    <p>Feyerabend via a ciência como uma forma de poder. Sua crítica buscava equilibrar razão e
+                        imaginação na busca do conhecimento.</p>
+                </div>
+                <div class="slide">
+                    <h3>4. Conclusão</h3>
+                    <p>Para ele, o progresso depende da pluralidade de ideias. Sua mensagem é simples: “Tudo vale, se
+                        funcionar”.</p>
+                </div>
+            </div>
+            <div class="controles">
+                <button id="anterior">&#10094;</button>
+                <button id="proximo">&#10095;</button>
+            </div>
+
+            <div class="link-trabalho">
+                <!-- COLOQUE AQUI O LINK DO SEU TRABALHO -->
+                <a href="https://1drv.ms/p/c/d74d888fc4e94ca0/EcFM73uw1shFl4bVEp9BtBwB198SVk2LyFz_DaZCIyR3Gw?e=20oel8" target="_blank">Ver Trabalho Completo</a>
+            </div>
+        </div>
+
+        <div class="imagem">
+            <!-- FOTO AQUI -->
+            <img src="./img/WhatsApp Image 2025-11-11 at 23.26.52.jpeg" alt="Imagem do trabalho">
+        </div>
+    </section>
+
+    <footer>
+        Apresentado por <strong>Wellington Abidengo</strong> e <strong>Samara Silva</strong> — Filosofia Contemporânea, 2025
+    </footer>
+
+    <script>
+        const btn = document.getElementById('entrarBtn');
+        const capa = document.getElementById('capa');
+        const conteudo = document.getElementById('conteudo');
+        const slides = document.querySelectorAll('.slide');
+        const anterior = document.getElementById('anterior');
+        const proximo = document.getElementById('proximo');
+        let index = 0;
+
+        btn.addEventListener('click', () => {
+            capa.style.display = 'none';
+            conteudo.style.display = 'flex';
+        });
+
+        function mostrarSlide(n) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('ativo');
+                if (i === n) slide.classList.add('ativo');
+            });
+        }
+
+        anterior.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : slides.length - 1;
+            mostrarSlide(index);
+        });
+
+        proximo.addEventListener('click', () => {
+            index = (index < slides.length - 1) ? index + 1 : 0;
+            mostrarSlide(index);
+        });
+
+        // Auto-carrossel (passa automaticamente a cada 7s)
+        setInterval(() => {
+            index = (index + 1) % slides.length;
+            mostrarSlide(index);
+        }, 7000);
+    </script>
+
+</body>
+
+</html>
